@@ -1,0 +1,101 @@
+body{
+    font-family: 'Poppins', serif;
+    background-image: url ('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.nav_links{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_links > .nav_item:link {
+    color: #0000EE;
+  }
+
+.nav_links > .nav_item:visited {
+    color: #0000EE;
+  }
+
+@keyframes move {
+    0% {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+  }
+
+#logo{
+    animation: 5s move;
+}
+
+.card{
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+    
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+@media screen and (min-width: 900px) {
+    header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .pricing{
+        flex-basis: 275px;
+    }
+
+    .card{
+        flex-basis: 275px;
+    }
+
+    body > header{
+        display: flex;
+        
+    }
+
+}
+
+@media print {
+
+}

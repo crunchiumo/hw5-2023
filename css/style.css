@@ -126,6 +126,7 @@ a[href*="#gallery"]:visited {
 @media print { /*changes the styling for the printing page*/
     body{
         font-family: 'Poppins', serif; /*changes the font default to Arial then Helvetica*/
+        background-image: url();
     }
 
     body > header{
@@ -136,19 +137,20 @@ a[href*="#gallery"]:visited {
         display: flex;
         align-items: center;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .card{
         border: solid 2px #45ADDD;
         flex-basis: 325px;
-        align-items: flex-end;
+    
     }
     
 
     .pricing{
         flex-basis: 275px;
-        align-items: end;
+        flex-wrap: non-wrap;
+        
     }
 
     #gallery{

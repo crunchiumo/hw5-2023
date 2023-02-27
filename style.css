@@ -1,6 +1,6 @@
 body{
     font-family: 'Poppins', serif; /*changes the font default to poppins then serif*/
-    background-image: url ('../images/concrete_seamless.png');
+    background-image: url("../images/concrete_seamless.png");
     background-color: #f1f1f1;
 
 }
@@ -18,13 +18,29 @@ header{
     flex-direction: column;
 }
 
-.nav_links > .nav_item:link {
+a[href*="#skip"] {/*sets the navigation links to blue after visiting as well*/
     color: #0000EE;
-  }
+}
 
-.nav_links > .nav_item:visited {
+a[href*="#skip"]:visited {
     color: #0000EE;
-  }
+}
+
+a[href*="#pricing"] {
+    color: #0000EE;
+}
+
+a[href*="#pricing"]:visited {
+    color: #0000EE;
+}
+
+a[href*="#gallery"] {
+    color: #0000EE;
+}
+
+a[href*="#gallery"]:visited {
+    color: #0000EE;
+}
 
 @keyframes move { /*sets the animation for the header when the page loads*/
     0% {width: 25px; opacity: 0;}
@@ -73,6 +89,7 @@ header{
     header{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .nav_links{
@@ -83,6 +100,7 @@ header{
 
     .pricing{
         flex-basis: 275px; /* 275px for the pricing */
+        align-items: center;
     }
 
     .card{
@@ -90,14 +108,56 @@ header{
     }
 
     body > header{
-        position: fixed;
+        position: sticky;/*fixes the header at the top*/
         top:0;
         width: 100%;
-        z-index:1;
+        z-index: 1;
     }
 
 }
 
-@media print {
+@media (prefers-reduced-motion) {
+    #logo{ 
+        /*removes animation if reduced motion is on*/
+        animation: 0s;
+    }
+}
 
+@media print { /*changes the styling for the printing page*/
+    body{
+        font-family: 'Poppins', serif; /*changes the font default to Arial then Helvetica*/
+    }
+
+    body > header{
+        flex-direction: column;
+    }
+
+    .nav_links{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        align-items: flex-end;
+    }
+    
+
+    .pricing{
+        flex-basis: 275px;
+        align-items: end;
+    }
+
+    #gallery{
+        display: none;
+    }
+
+    .gallery{
+        display: none;
+    }
+
+    
 }
